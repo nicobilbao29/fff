@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.charts-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los gráficos se envuelvan en varias filas si no hay espacio suficiente */
+    justify-content: space-around; /* Espacio uniforme entre los gráficos */
+    gap: 20px; /* Espacio entre los gráficos */
+}
+
+canvas {
+    width: 300px !important; /* Ajustar el ancho del gráfico */
+    height: 200px !important; /* Ajustar la altura del gráfico */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}

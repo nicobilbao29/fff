@@ -1,0 +1,85 @@
+body {
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #399caf;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+/* Estilos para los botones de Editar y Eliminar */
+.btn-editar {
+    color: #28a745; /* Verde llamativo para Editar */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-editar:hover {
+    color: #218838; /* Verde más oscuro cuando pasas el cursor */
+}
+
+.btn-eliminar {
+    color: #dc3545; /* Rojo llamativo para Eliminar */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-eliminar:hover {
+    color: #c82333; /* Rojo más oscuro cuando pasas el cursor */
+}

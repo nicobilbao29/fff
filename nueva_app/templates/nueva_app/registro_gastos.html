@@ -1,0 +1,31 @@
+<!-- nueva_app/templates/nueva_app/registro_gastos.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Gastos</title>
+    <link rel="stylesheet" href="{% static 'nueva_app/css/estilos.css' %}">
+</head>
+<body>
+    <h1>Registrar Gastos</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+        </div>
+        <div>
+            <label for="monto">Monto:</label>
+            <input type="number" id="monto" name="monto" step="0.01" required>
+        </div>
+        <div>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+        </div>
+        <button type="submit">Registrar Gasto</button>
+    </form>
+    <a href="{% url 'menu' %}">Volver al menú</a>
+</body>
+</html>

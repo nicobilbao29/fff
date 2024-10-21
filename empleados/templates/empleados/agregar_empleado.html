@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Empleado</title>
+    <link rel="stylesheet" href="{% static 'css/formulario.css' %}"> <!-- Enlace a nuevo CSS -->
+</head>
+<body>
+    <div class="form-container">
+        <h1>Agregar Empleado</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar Empleado</button>
+        </form>
+    </div>
+</body>
+</html>

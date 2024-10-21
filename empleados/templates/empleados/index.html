@@ -1,0 +1,42 @@
+<!--MENU PRINCIPAL -->
+
+{% load static %}
+<!DOCTYPE html><!-- Asegúrate de usar static -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Asegúrate de usar static -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Panel Administrativo</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Panel de Administración</h2>
+        <ul>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'listar_empleados' %}">Empleados</a></li>  <!-- Enlace a la vista de empleados -->
+            <li><a href="{% url 'registro_gastos' %}">Registrar Gastos</a></li>  <!-- Enlace para registrar gastos -->
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Ventas</a></li>
+            <li><a href="#">Reportes</a></li>
+            <li><a href="#">Configuraciones</a></li>
+            <li><a href="{% url 'menu' %}">Menú Nueva App</a></li>
+            
+
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Bienvenido al Panel Administrativo</h1>
+        </header>
+        <div class="content">
+            <h2>Resumen de Actividades</h2>
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <button id="myButton">Mostrar Mensaje</button>
+        </div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script> <!-- Asegúrate de usar static -->
+</body>
+</html>

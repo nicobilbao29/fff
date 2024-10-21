@@ -1,0 +1,63 @@
+{% load static %}
+{% load humanize %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Empleados</title>
+    <link rel="stylesheet" href="{% static 'css/listar_empleados.css' %}"> <!-- Cargar listado.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Empleados</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Departamento</th>
+                    <th>Fecha de Contratación</th>
+                    <th>Sueldo</th> <!-- Columna de acciones -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for empleado in empleados %}
+                <tr>
+                    <td>{{ empleado.nombre }}</td>
+                    <td>{{ empleado.apellido }}</td>
+                    <td>{{ empleado.email }}</td>
+                    <td>{{ empleado.telefono }}</td>
+                    <td>{{ empleado.departamento }}</td>
+                    <td>{{ empleado.fecha_contratacion }}</td>
+                    <td>${{ empleado.sueldo|floatformat:0|intcomma }}</td>
+                    
+                    <td>
+                            <!-- Enlaces para editar y eliminar con clases personalizadas -->
+                         <a href="{% url 'editar_empleado' empleado.id %}" class="btn-editar">Editar</a> | 
+                         <a href="{% url 'eliminar_empleado' empleado.id %}" class="btn-eliminar" onclick="return confirm('¿Estás seguro de eliminar este empleado?');">
+                            <i class="fas fa-trash-alt"></i> Eliminar
+                         </a>
+                    </td>
+
+
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7">No hay empleados registrados.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <button onclick="location.href='{% url 'agregar_empleado' %}'">Agregar Empleado</button> <!-- Botón para agregar empleados -->
+
+        <!-- Botón para volver al menú principal -->
+        <button onclick="location.href='{% url 'index' %}'" style="margin-top: 10px;">Volver al Menú Principal</button>
+    </div>
+</body>
+</html>
